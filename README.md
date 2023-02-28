@@ -1,63 +1,39 @@
-# Work Report
 
-## Information
+# Project Name
+Project Description goes here
 
-- Name: <ins> Last_Name, First_Name </ins>
-- CIN: <ins> Campus_Identification_Number </ins>
-- GitHub: <ins> github_username </ins>
-- Email: <ins> @go.pasadena.edu </ins>
+* operation 1
+* operation 2
+
+
+## Demo
+use this to generate image link: https://postimages.org/
+* Demo 1
+link goes here
+* Demo 2
+link goes here
+
+
+## Design
+change the repo name:
+Can be found in https://github.com/Serenity0204/CPP_TEMPLATE/blob/master/design.txt
 
 
 ## Features
 
-- Not Implemented:
-  - what features have been implemented
-
-<br><br>
-
-- Implemented:
-  - what has been implemented
-
-<br><br>
-
-- Partly implemented:
-  - what features have not been implemented
-
-<br><br>
-
-- Bugs
-  - Known bugs
-
-<br><br>
+- feature 1
+- feature 2
 
 
-## Reflections
+## System Setup
 
-- Any thoughts you may have and would like to share.
+To run this project, please follow the system requirements below, this project has only been tested on windows.
 
 
-## Output
+`Windows: `
+  - compiler: g++ 7.3.0 
+  - cmake: 3.20.0
 
-### basic_test.cpp output:
-
-<pre>
-<br/><br/>
-## Delete this line and paste the output of your testB here
-<br/><br/>
-</pre>
-
-### main.cpp output:
-
-<pre>
-<br/><br/>
-## Delete this line and paste the output of your main here
-<br/><br/>
-</pre>
-
-### testB.cpp output:
-
-<pre>
-<br/><br/>
-## Delete this line and paste the output of your basic test here
-<br/><br/>
-</pre>
+`SFML setup: `
+  - windows: https://docs.google.com/document/d/13Tn2sq9-CtAMuUenALlj1l4f8xL-BzeI8-DKRjhdPu0/edit?usp=sharing
+  - mac: https://docs.google.com/document/d/1ujZWMMvwwIH_dAd-X4JvcVdtn7B71-joOjbOo-vVXLY/edit?usp=sharing
