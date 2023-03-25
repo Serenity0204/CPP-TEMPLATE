@@ -58,12 +58,11 @@ ADD_EXECUTABLE(main
     ${SOURCE_FILES}
 )
 
-ADD_EXECUTABLE(instruction
-    _tests/_test_files/instruction.cpp
+ADD_EXECUTABLE(test_stub
+    _tests/_test_files/test_stub.cpp
     ${SOURCE_FILES}
 )
 
 
-
-TARGET_LINK_LIBRARIES(instruction gtest)
-
+TARGET_LINK_LIBRARIES(main gtest)
+TARGET_LINK_LIBRARIES(test_stub gtest)
