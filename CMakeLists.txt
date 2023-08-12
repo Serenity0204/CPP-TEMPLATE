@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR) #FetchContent_MakeAvailable
 project(project_name)
 
 #. . . . . . . . . . . . . . . . . . . .
@@ -23,23 +23,20 @@ if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
 endif()
 #. . . . . . . . . . . . . . . . . . . .
 
-# ------------------------------------
+## ------------------------------------
+find_package(GTest QUIET)
+if (NOT ${GTest_FOUND}) # GTest not found, FetchContent!
 include(FetchContent)
 FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
-)
-
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG        v1.13.0)
 FetchContent_MakeAvailable(googletest)
-
-# GoogleTest requires at least C++11
+endif()
+    
+# GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
- 
-enable_testing() 
-
-
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # ------------------------------------
 
 
@@ -48,7 +45,7 @@ enable_testing()
 #   Grab all cpp files from includes folder
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 set(INCLUDES_FOLDER includes)
-FILE(GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}   "${INCLUDES_FOLDER}/*.cpp" )
+FILE(GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} CONFIGURE_DEPENDS "${INCLUDES_FOLDER}/*.cpp")
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
@@ -64,5 +61,5 @@ ADD_EXECUTABLE(test_stub
 )
 
 
-TARGET_LINK_LIBRARIES(main gtest)
-TARGET_LINK_LIBRARIES(test_stub gtest)
+TARGET_LINK_LIBRARIES(main GTest::gtest_main)
+TARGET_LINK_LIBRARIES(test_stub GTest::gtest_main)
