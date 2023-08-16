@@ -6,4 +6,4 @@ project structure:
     --CMakeLists.txt // cmake for this project
 
 // TODO
-
+USE sloc . to count the lines of code
