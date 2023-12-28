@@ -4,11 +4,9 @@
 
 //------------------------------------------------------------------------------
 // Files we are testing:
-#include "../../includes/stub/stub.h"
+#include "../includes/stub/stub.h"
 
 //------------------------------------------------------------------------------
-
-using namespace std;
 
 bool test_stub(bool debug = false)
 {
