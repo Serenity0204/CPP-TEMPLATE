@@ -5,13 +5,16 @@ project(ProjectName)
 option(BUILD_TESTS "Build tests" ON)
 
 
+# Create a "bin" directory in the build directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-#   Grab all cpp files from includes folder
+#   Grab all cpp files from src folder
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-set(INCLUDES_FOLDER includes)
-FILE(GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} CONFIGURE_DEPENDS "${INCLUDES_FOLDER}/*.cpp")
+include_directories(${PROJECT_SOURCE_DIR}/include)
+set(SRC_FOLDER src)
+FILE(GLOB_RECURSE SOURCE_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} CONFIGURE_DEPENDS "${SRC_FOLDER}/*.cpp")
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
 
@@ -50,7 +53,7 @@ endif()
 
 
 
-## -----------------------------------------------------------------------------
+## ----------------------------------------------------------------------------- UNDER CONSTRUCTION
 
 ## for HEADER ONLY library project
 
